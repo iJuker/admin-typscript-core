@@ -18,13 +18,6 @@ const route: Array<PropRoute> = [
         name: 'Dashboard',
         component: Dashboard,
     },
-    {
-        id: 'dashboard',
-        path: '/',
-        exact: true,
-        name: 'Dashboard',
-        component: Dashboard,
-    },
 ];
 
 export default route;
