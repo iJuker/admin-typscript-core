@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useState } from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 import { Layout } from 'antd';
 import styled from 'styled-components';
+import Loading from 'components/Loading';
 
-import route from '../../_route';
-import nav from '../../_nav';
+import route from '_route';
+import nav from '_nav';
 import { Header, SideBar } from './components';
 
 const { Content, Footer, Sider } = Layout;
@@ -35,12 +36,17 @@ const LogoSubText = styled.span`
 `;
 
 const WrapContent = styled(Content)`
-    margin: 24px 16px 0;
+    margin-top: 65px;
+    padding: 20px;
     overflow: initial;
     min-height: 80vh;
-    margin-top: 50px;
 `;
-
+const CustomLoading = styled.div`
+    position: relative !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`;
 const Index: React.FC = () => {
     // STATE
     const [collapsed, setCollapsed] = useState<boolean>(false);
@@ -60,19 +66,25 @@ const Index: React.FC = () => {
                 <SideBar pathname={pathname} nav={nav} />
             </WrapSider>
 
-            <Layout style={{ marginLeft: collapsed ? 0 : 200 }}>
+            <Layout style={{ marginLeft: collapsed ? 75 : 200 }}>
                 {/* SECTION :: HEADER */}
                 <Header />
                 {/* SECTION :: CONTENT */}
                 <WrapContent>
-                    <div style={{ padding: 24, textAlign: 'center' }}>
+                    <Suspense
+                        fallback={
+                            <CustomLoading>
+                                <Loading />
+                            </CustomLoading>
+                        }
+                    >
                         <Switch>
                             {route.map((r) => (
                                 <Route key={r.id} exact={r.exact} path={r.path} component={r.component} />
                             ))}
-                            <Redirect to="/404" />
+                            <Redirect from="/" to="/dashboard" />
                         </Switch>
-                    </div>
+                    </Suspense>
                 </WrapContent>
 
                 {/* SECTION :: FOOTER */}

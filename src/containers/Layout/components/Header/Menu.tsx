@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Divider, Button, Avatar, Menu } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import { appCons } from 'util/appContext';
 
 const Container = styled.div`
     background-color: #fff;
@@ -21,6 +22,7 @@ const H3 = styled.h3`
 `;
 
 const MenuDropDown: React.FC = () => {
+    const { logout } = appCons();
     return (
         <Container>
             <Padding style={{ textAlign: 'center' }}>
@@ -38,7 +40,7 @@ const MenuDropDown: React.FC = () => {
             </Menu>
             <Divider style={{ margin: `0px 0px` }} />
             <Padding style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button>Log out</Button>
+                <Button onClick={logout}>Log out</Button>
             </Padding>
         </Container>
     );
