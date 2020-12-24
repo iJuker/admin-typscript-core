@@ -15,6 +15,7 @@ const WrapHeader = styled(Header)`
 const HeaderAvatar = styled.div`
     position: absolute;
     right: 0;
+    bottom: 4px;
     margin-right: 20px;
     cursor: pointer;
     /* padding: 10px; */
