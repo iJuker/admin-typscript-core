@@ -1,0 +1,41 @@
+[{
+
+    "type": "admin",
+    "first": "Kosal",
+    "last": "Phan",
+    "gender": "M",
+    "email": "kosal@gmail.com"
+},
+{
+
+    "type": "admin",
+    "first": "Kosal 001",
+    "last": "Phan",
+    "gender": "M",
+    "email": "kosal001@gmail.com"
+},
+{
+
+    "type": "user",
+    "first": "Kosal 002",
+    "last": "Phan",
+    "gender": "M",
+    "email": "kosal002@gmail.com"
+},
+{
+
+    "type": "admin",
+    "first": "Kosal 003",
+    "last": "Phan",
+    "gender": "M",
+    "email": "kosal003@gmail.com"
+},
+{
+
+    "type": "admin",
+    "first": "Kosal 004",
+    "last": "Phan",
+    "gender": "M",
+    "email": "kosal004@gmail.com"
+}
+]

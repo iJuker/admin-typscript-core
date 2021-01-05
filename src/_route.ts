@@ -1,5 +1,7 @@
+import React from 'react';
 // ============================================================================ COMPONENT ::
-import Dashboard from './containers/Dashboard';
+const Dashboard = React.lazy(() => import('containers/Dashboard'));
+const User = React.lazy(() => import('containers/User'));
 
 // ============================================================================ ROUTE ::
 interface PropRoute {
@@ -17,6 +19,20 @@ const route: Array<PropRoute> = [
         exact: true,
         name: 'Dashboard',
         component: Dashboard,
+    },
+    {
+        id: 'user',
+        path: '/user',
+        exact: true,
+        name: 'User',
+        component: User,
+    },
+    {
+        id: 'addUser',
+        path: '/user/add-user',
+        exact: true,
+        name: 'User',
+        component: User,
     },
 ];
 
